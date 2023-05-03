@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 16px;
+  .menu {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+
+    .active {
+      font-weight: 600;
+    }
+  }
+
+  .user-info {
+    font-weight: 600;
+  }
+}
+
+
+
+.container {
+  padding: 16px 32px;
+}

@@ -1,0 +1,20 @@
+<div class="buy-token-container">
+  <div class="buy-token-form">
+    <h3>Buy Token</h3>
+    <form nz-form [formGroup]="buyTokenForm">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input number of tokens ">
+          <nz-form-label nzRequired>Total Token</nz-form-label>
+          <nz-input-number (ngModelChange)="updateTotalPrice($event)" formControlName="totalToken"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Price (${{fixedCost}}/1 token)</nz-form-label>
+        <nz-input-number formControlName="totalPrice"></nz-input-number>
+      </nz-form-item>
+    </form>
+    <button (click)="submit()" nzType="primary" class="buy-token-btn" nz-button>
+      Buy
+    </button>
+  </div>
+</div>

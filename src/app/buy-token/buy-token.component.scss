@@ -1,0 +1,21 @@
+.buy-token-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  .buy-token-form {
+    height: fit-content;
+    width: 376px;
+    border: 1px solid #b8afaf;
+    padding: 64px 32px;
+
+    nz-input-number {
+      display: block;
+      width: 100%;
+    }
+
+    .buy-token-btn {
+      width: 100%;
+    }
+  }
+}

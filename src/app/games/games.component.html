@@ -1,0 +1,11 @@
+<div class="game-container">
+  <ng-container *ngFor="let item of gameData">
+    <nz-card style="width:300px;" [nzTitle]="item.name" [nzExtra]="extraTemplate">
+      <p>{{item.description}}</p>
+      <p>Total Tokens: {{item.token}}</p>
+    </nz-card>
+    <ng-template #extraTemplate>
+      <a (click)="playGame(item)">Play Game</a>
+    </ng-template>
+  </ng-container>
+</div>
