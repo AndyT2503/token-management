@@ -12,6 +12,12 @@
         <nz-form-label>Price (${{fixedCost}}/1 token)</nz-form-label>
         <nz-input-number formControlName="totalPrice"></nz-input-number>
       </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-form-label>Note</nz-form-label>
+          <input type="text" nz-input formControlName="note">
+        </nz-form-control>
+      </nz-form-item>
     </form>
     <button (click)="submit()" nzType="primary" class="buy-token-btn" nz-button>
       Buy

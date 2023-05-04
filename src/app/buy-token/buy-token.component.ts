@@ -8,6 +8,7 @@ import {
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
 import { ApiService } from '../shared/services/api.service';
 import { UserInfoService } from '../shared/services/user-info.service';
@@ -21,6 +22,7 @@ import { UserInfoService } from '../shared/services/user-info.service';
     NzButtonModule,
     NzInputNumberModule,
     NzMessageModule,
+    NzInputModule
   ],
   templateUrl: './buy-token.component.html',
   styleUrls: ['./buy-token.component.scss'],
@@ -37,6 +39,11 @@ export class BuyTokenComponent {
     totalPrice: new FormControl({
       value: 0,
       disabled: true
+    }, {
+      nonNullable: true
+    }),
+    note: new FormControl('', {
+      nonNullable: true
     })
   });
   readonly fixedCost = 0.25;
@@ -57,9 +64,9 @@ export class BuyTokenComponent {
       });
       return;
     }
-    const { totalToken } = this.buyTokenForm.getRawValue();
+    const { totalToken, totalPrice, note } = this.buyTokenForm.getRawValue();
     this.apiService
-      .buyToken(this.userInfoService.getUserName(), totalToken)
+      .buyToken(this.userInfoService.getUserName(), totalToken, note, totalPrice)
       .subscribe((res) => {
         if (res.success) {
           this.nzMessage.success('Buy token successfully!!!');

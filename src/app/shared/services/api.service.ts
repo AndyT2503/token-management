@@ -39,12 +39,14 @@ export class ApiService {
     });
   }
 
-  buyToken(username: string, totalToken: number): Observable<Response> {
+  buyToken(username: string, totalToken: number, note: string, totalPrice: number): Observable<Response> {
     //TODO: Uncomment it when have api endpoint
     // API should be POST method and take body with 2 field username and totalToken
     // return this.httpClient.post<Response>('add api buy token here', {
     //   username,
-    //   totalToken
+    //   totalToken,
+    //   note,
+    //   totalPrice
     // })
 
     //TODO: Mock data. Remove it later
