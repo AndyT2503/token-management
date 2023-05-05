@@ -71,6 +71,7 @@ export class BuyTokenComponent {
         if (res.success) {
           this.nzMessage.success('Buy token successfully!!!');
           this.userInfoService.loadCurrentBalanceToken();
+          this.buyTokenForm.reset();
         }
       });
   }
